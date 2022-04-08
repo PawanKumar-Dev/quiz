@@ -31,20 +31,6 @@ function publishAllOptionsOfQuestion($q_id) {
 }
 
 
-function getCountAllQuestion() {
-  global $connection;
-
-  $sql = "SELECT id FROM questions";
-  $result = mysqli_query($connection, $sql);
-
-  if (mysqli_num_rows($result) > 0) {
-    return mysqli_num_rows($result);
-  } else {
-    echo "Data Fetch failed";
-  }
-}
-
-
 function isCorrectAnswer($qid, $ansid) {
   global $connection;
 
@@ -60,10 +46,10 @@ function isCorrectAnswer($qid, $ansid) {
 }
 
 
-function insertNewQust($q, $ct_ans, $opts) {
+function insertNewQust($q, $opts) {
   global $connection;
 
-  $sql1 = "INSERT INTO questions (question, answer_id) VALUES ('$q', '$ct_ans')";
+  $sql1 = "INSERT INTO questions (question) VALUES ('$q')";
   $result1 = mysqli_query($connection, $sql1);
 
   $qid = mysqli_insert_id($connection);
@@ -73,8 +59,44 @@ function insertNewQust($q, $ct_ans, $opts) {
     $result2 = mysqli_query($connection, $sql2);
   }
 
-  echo $result1;
-  echo $result2;
+  if($result1 && $result2) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-;
+
+
+function getAllIds() {
+  global $connection;
+
+  $sql = "SELECT id FROM questions";
+  $result = mysqli_query($connection, $sql);
+
+  return $result;
+}
+
+
+function getAnswerByID($id) {
+  global $connection;
+  
+  $sql = "SELECT answer FROM answers WHERE answer_id = $id";
+  $result = mysqli_query($connection, $sql);
+
+  foreach (mysqli_fetch_array($result) as $value) {
+    return $value;
+  }
+}
+
+
+function updateCorrectAnswer($ansid, $qid) {
+  global $connection;
+  
+  $sql = "UPDATE questions SET answer_id = $ansid WHERE id = $qid";
+  $result = mysqli_query($connection, $sql);
+
+  if (mysqli_affected_rows($connection)) {
+    return $qid;
+  }
+}

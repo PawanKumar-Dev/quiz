@@ -10,7 +10,6 @@
         <a href="quiz.php" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
       </div>
       <br><br>
-
     </div>
   </div>
 

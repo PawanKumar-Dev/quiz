@@ -8,11 +8,12 @@
       <!-- Question Card -->
       <?php
       $result = publishAllQuestion();
+      $i = 1;
       while ($record = mysqli_fetch_assoc($result)) : ?>
         <div class="col s12 m6">
           <div class="card light-grey darken-1 hoverable">
             <div class="card-content">
-              <span class="card-title">Question No. <?= $record['id']; ?></span>
+              <span class="card-title">Question No. <?= $i; ?></span>
               <p><?= $record['question']; ?></p>
               <input type="hidden" name="question<?= $record['id']; ?>" value="<?= $record['id']; ?>">
             </div>
@@ -31,7 +32,7 @@
           </div>
         </div>
         <!-- Question Card -->
-      <?php endwhile; ?>
+      <?php $i++; endwhile; ?>
 
     </div>
     <button class="center-align waves-effect waves-light btn" type="submit" name="quiz_submit"><i class="material-icons right">cloud</i>Submit</button>

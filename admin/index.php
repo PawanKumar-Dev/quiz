@@ -17,6 +17,7 @@
           <th>S.no</th>
           <th>Question</th>
           <th>Options</th>
+          <th class="right">Answer</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +29,11 @@
             <td><?= $i; ?>.</td>
             <td><?= $record['question'];?></td>
             <td><a href="options.php?id=<?= $record['id'];?>" class="btn waves-effect waves-light blue lighten-1">See options</a></td>
+            <?php if($record['answer_id'] == 0): ;?>
+            <td class="right">Not Chosen</td>
+            <?php else: ?>
+            <td class="right"><?= getAnswerByID($record['answer_id']);?></td>
+            <?php endif; ?>
           </tr>
         <?php $i++; endwhile; ?>
       </tbody>

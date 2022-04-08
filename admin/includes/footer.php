@@ -29,7 +29,7 @@
   </div>
   <div class="footer-copyright">
     <div class="container">
-      Crafter by <a class="orange-text text-lighten-3" target="_blank" href="https://devspecial.online">Pawan</a>
+      Crafted by <a class="orange-text text-lighten-3" target="_blank" href="https://devspecial.online">Pawan</a>
     </div>
   </div>
 </footer>

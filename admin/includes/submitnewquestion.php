@@ -9,10 +9,8 @@ if(isset($_POST['addNewQst'])) {
   $opt[] = $_POST['opt2'];
   $opt[] = $_POST['opt3'];
   $opt[] = $_POST['opt4'];
-  
-  $correct_ans = $_POST['correct_ans'];
 
-  insertNewQust($quest, $correct_ans, $opt);
+  insertNewQust($quest, $opt);
 
-  header("location: index.php");
+  header("location: ../index.php");
 }

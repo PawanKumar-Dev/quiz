@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2022 at 09:50 AM
+-- Generation Time: Apr 08, 2022 at 02:46 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -53,7 +53,11 @@ INSERT INTO `answers` (`answer_id`, `answer`, `q_id`) VALUES
 (17, 'PHP Example Amplified Resolution', 10),
 (18, 'PHP Extension and Application Repository', 10),
 (19, 'Pear Evaluation Amplified Repository', 10),
-(20, 'Pear Extension And Repo', 10);
+(20, 'Pear Extension And Repo', 10),
+(33, 'Bootstrap', 14),
+(34, 'Salesforce', 14),
+(35, 'React', 14),
+(36, 'CodeIgniter', 14);
 
 -- --------------------------------------------------------
 
@@ -75,7 +79,8 @@ INSERT INTO `questions` (`id`, `question`, `answer_id`) VALUES
 (1, 'What does HTML stand for?', 3),
 (2, 'What is the full form of PHP?', 7),
 (3, 'What is SQL?', 10),
-(10, 'What does PEAR stands for?', 2);
+(10, 'What does PEAR stands for?', 18),
+(14, 'Which one is the popular framework in PHP?', 36);
 
 --
 -- Indexes for dumped tables
@@ -101,13 +106,13 @@ ALTER TABLE `questions`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
